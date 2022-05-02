@@ -4,29 +4,30 @@ import javax.persistence.*
 
 
 @Entity
-@Table(name = "users")
-data class Users(
-
+@Table(name = "goods")
+data class Goods(
     @Column
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long,
 
+
     @Column(nullable = false)
     val name: String,
 
 
-    @Column(nullable = false)
-    val email: String,
+    @Column(nullable = true)
+    val description: String? = null,
 
     @Column(nullable = false)
-    val password: String,
+    val price: Long,
+
 
     @Column(name = "created_at")
     @Temporal(TemporalType.TIMESTAMP)
     val createdAt: String,
-    
 
+    
     @Column(name = "updated_at")
     @Temporal(TemporalType.TIMESTAMP)
     val updatedAt: String
