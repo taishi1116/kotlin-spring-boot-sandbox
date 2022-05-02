@@ -3,7 +3,7 @@ package com.example.goods.usecases
 import com.example.goods.entity.Users
 
 interface UserRepository {
-    fun create(user:Users)
+    fun save(name:String,email:String,password:String):Long
     fun update(user:Users)
-    fun findById(userId:Long)
+    fun findById(userId:Long):Users?
 }
