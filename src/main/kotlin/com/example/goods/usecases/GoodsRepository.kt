@@ -1,4 +1,4 @@
-package com.example.goods.interfaces.repository
+package com.example.goods.usecases
 
 import com.example.goods.entity.Goods
 
