@@ -1,4 +1,4 @@
-package com.example.goods.usecases
+package com.example.goods.usecases.user
 
 import com.example.goods.entity.Users
 

@@ -2,7 +2,7 @@ package com.example.goods.entity
 
 import javax.persistence.*
 
-
+// 本来ならdataclassのみでspring のアノテーションが入ったらダメ
 @Entity
 @Table(name = "goods")
 data class Goods(
