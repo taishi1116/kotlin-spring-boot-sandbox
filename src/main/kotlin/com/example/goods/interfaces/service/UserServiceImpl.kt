@@ -16,15 +16,18 @@ class UserServiceImpl(private val userRepository: UserRepository) : UserService{
         return result
     }
 
-    // TODO 本来であれば引数のuserはentityなので日時を持たないはず
-    // 日時はアプリケーション要件なのでserviceクラスで定義するべき
-    override fun create(user: Users):Long {
-       return  userRepository.save(user.name,user.email,user.password)
+    override fun create(name:String,email:String,password:String):Long {
+       return  userRepository.save(name,email,password)
     }
 
     // TODO 本来であれば引数のuserはentityなので日時を持たないはず
     // 日時はアプリケーション要件なのでserviceクラスで定義するべき
-    override fun update(user: Users) {
+    override fun update(id:Long,name:String,email:String,password:String) {
+        // TODO エラーハンドリング
+        val user = userRepository.findById(id)
+        if(user === null) throw Exception()
+
+        val updatedUser = Users(id,name,email,password,user.createdAt.toString(),user.updatedAt.toString())
         userRepository.update(user)
     }
 }
