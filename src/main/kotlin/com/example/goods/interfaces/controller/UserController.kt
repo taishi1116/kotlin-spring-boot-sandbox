@@ -14,6 +14,11 @@ class UserController {
     @Autowired
     private lateinit var  userService:UserService
 
+    @GetMapping("/test")
+    fun getTest():String {
+        return "hello"
+    }
+
 
     @GetMapping("/{id}")
     fun getUser(@PathVariable id: String):Users {
