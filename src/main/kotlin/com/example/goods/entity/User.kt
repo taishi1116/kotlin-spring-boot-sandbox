@@ -22,11 +22,9 @@ data class User(
     val password: String,
 
     @Column(name = "created_at")
-    @Temporal(TemporalType.TIMESTAMP)
     val createdAt: String,
 
 
     @Column(name = "updated_at")
-    @Temporal(TemporalType.TIMESTAMP)
     val updatedAt: String
 )
