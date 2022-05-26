@@ -1,10 +1,8 @@
 package com.example.goods.interfaces.controller
 
-import com.example.goods.entity.Users
-import com.example.goods.interfaces.repository.inmemory.UserRepositoryImpl
+import com.example.goods.entity.User
 import com.example.goods.usecases.user.UserService
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -21,7 +19,7 @@ class UserController {
 
 
     @GetMapping("/{id}")
-    fun getUser(@PathVariable id: String):Users {
+    fun getUser(@PathVariable id: String):User {
         return userService.find(id.toLong())
     }
 

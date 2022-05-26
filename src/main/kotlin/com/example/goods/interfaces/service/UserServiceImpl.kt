@@ -1,33 +1,43 @@
 package com.example.goods.interfaces.service
 
-import com.example.goods.entity.Users
-import com.example.goods.usecases.user.UserRepository
+import com.example.goods.interfaces.repository.jpa.JpaUserRepository
+import com.example.goods.entity.User
 import com.example.goods.usecases.user.UserService
 import org.springframework.stereotype.Service
 
 
 @Service
-class UserServiceImpl(private val userRepository: UserRepository) : UserService{
+class UserServiceImpl(private val userRepository: JpaUserRepository) : UserService{
 
-    override fun find(id: Long): Users {
-        // TODO エラーハンドリング
-        val result = userRepository.findById(id)
-        if(result === null) throw Exception()
-        return result
+    override fun find(id: Long): User {
+        return userRepository.getById(id)
     }
 
     override fun create(name:String,email:String,password:String):Long {
-       return  userRepository.save(name,email,password)
+       val user = userRepository.save(
+           User(
+               1,
+               name,
+               email,
+               password,
+               createdAt = "",
+               updatedAt = "",
+           )
+       )
+        return user.id
     }
 
-    // TODO 本来であれば引数のuserはentityなので日時を持たないはず
-    // 日時はアプリケーション要件なのでserviceクラスで定義するべき
     override fun update(id:Long,name:String,email:String,password:String) {
-        // TODO エラーハンドリング
-        val user = userRepository.findById(id)
-        if(user === null) throw Exception()
-
-        val updatedUser = Users(id,name,email,password,user.createdAt.toString(),user.updatedAt.toString())
-        userRepository.update(user)
+        val user = userRepository.getById(id)
+        userRepository.save(
+            User(
+                id,
+                name,
+                email,
+                password,
+                createdAt = user.createdAt,
+                updatedAt = "",
+            )
+        )
     }
 }
