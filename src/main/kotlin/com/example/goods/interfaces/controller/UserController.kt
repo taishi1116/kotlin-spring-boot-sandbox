@@ -28,12 +28,12 @@ class UserController {
          return userService.create(name,email, password)
     }
 
-    @PutMapping
-    fun updateUser(@RequestBody id:String,name:String,email:String,password:String ){
+    @PutMapping("/{id}")
+    fun updateUser(@PathVariable id: String, @RequestBody name:String,email:String,password:String ){
         userService.update(id.toLong(),name,email,password)
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     fun deleteUser(@PathVariable id:String){}
 
 
