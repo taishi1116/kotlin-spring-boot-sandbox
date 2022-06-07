@@ -1,1 +1,0 @@
-INSERT INTO USERS VALUES (1,'shinoda','example@gmail.com','password','2020-04-01 08:30:00','2020-04-01 08:30:00')
