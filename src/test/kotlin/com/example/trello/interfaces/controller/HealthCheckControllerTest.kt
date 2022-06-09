@@ -1,4 +1,4 @@
-package com.example.goods.interfaces.controller
+package com.example.trello.interfaces.controller
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

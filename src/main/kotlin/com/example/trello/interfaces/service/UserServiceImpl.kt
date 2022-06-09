@@ -1,8 +1,8 @@
-package com.example.goods.interfaces.service
+package com.example.trello.interfaces.service
 
-import com.example.goods.interfaces.repository.jpa.JpaUserRepository
-import com.example.goods.entity.User
-import com.example.goods.usecases.user.UserService
+import com.example.trello.interfaces.repository.jpa.JpaUserRepository
+import com.example.trello.entity.User
+import com.example.trello.usecases.user.UserService
 import org.springframework.stereotype.Service
 
 

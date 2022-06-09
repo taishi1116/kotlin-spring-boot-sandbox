@@ -1,1 +1,1 @@
-rootProject.name = "goods"
+rootProject.name = "trello"

@@ -1,4 +1,4 @@
-package com.example.goods.entity
+package com.example.trello.entity
 
 data class Goods(
     val id: Long,

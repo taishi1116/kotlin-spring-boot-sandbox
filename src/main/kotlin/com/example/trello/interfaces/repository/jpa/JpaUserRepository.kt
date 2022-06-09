@@ -1,6 +1,6 @@
-package com.example.goods.interfaces.repository.jpa
+package com.example.trello.interfaces.repository.jpa
 
-import com.example.goods.entity.User
+import com.example.trello.entity.User
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 

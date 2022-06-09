@@ -1,7 +1,7 @@
-package com.example.goods.interfaces.controller
+package com.example.trello.interfaces.controller
 
-import com.example.goods.entity.User
-import com.example.goods.usecases.user.UserService
+import com.example.trello.entity.User
+import com.example.trello.usecases.user.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 

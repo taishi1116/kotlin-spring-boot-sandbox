@@ -1,6 +1,6 @@
-package com.example.goods.usecases
+package com.example.trello.usecases
 
-import com.example.goods.entity.Goods
+import com.example.trello.entity.Goods
 
 interface GoodsRepository {
     fun getAll()

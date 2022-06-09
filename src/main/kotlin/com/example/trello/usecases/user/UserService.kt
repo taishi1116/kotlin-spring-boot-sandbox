@@ -1,6 +1,6 @@
-package com.example.goods.usecases.user
+package com.example.trello.usecases.user
 
-import com.example.goods.entity.User
+import com.example.trello.entity.User
 
 interface UserService {
     fun find(id: Long): User
