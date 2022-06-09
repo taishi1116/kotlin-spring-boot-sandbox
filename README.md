@@ -32,6 +32,12 @@
 
 # DB
 
+ローカル環境での開発はH2 databaseを利用しています。
+springアプリケーションを立ち上げると自動的に起動する形となっています。
+
+- `docker-compose up -d`
+- `docker-compose exec -it db bash`
+
 - schemaspyで管理したい
 
 # API仕様
